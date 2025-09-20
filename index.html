@@ -1,13 +1,12 @@
-<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erion Sfarqa | Personal Website</title>
+    <title>Erion Sfarqa | Full Stack Web Developer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        /* style.css */
+        /* CSS Variables */
         :root {
             --primary: #4a148c;
             --primary-dark: #2d0750;
@@ -19,6 +18,7 @@
             --text: #e0e0e0;
         }
 
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -34,6 +34,7 @@
             background-color: var(--dark);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
         a {
@@ -44,6 +45,54 @@
 
         a:hover {
             color: var(--white);
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            border-radius: 2px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background-color: var(--secondary);
+            color: var(--dark);
+            border-radius: 5px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--white);
+            transform: translateY(-3px);
         }
 
         /* Navbar */
@@ -155,30 +204,6 @@
         }
 
         /* About Section */
-        .section {
-            padding: 5rem 5%;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: var(--white);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background-color: var(--secondary);
-            border-radius: 2px;
-        }
-
         .about-content {
             display: flex;
             align-items: center;
@@ -268,6 +293,11 @@
             text-align: center;
             position: relative;
             cursor: pointer;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .skill-card:hover {
@@ -614,6 +644,12 @@
         }
 
         /* Responsive Design */
+        @media (max-width: 1200px) {
+            .skills-container {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
         @media (max-width: 992px) {
             .about-content {
                 flex-direction: column;
@@ -644,6 +680,10 @@
 
             .project-idea-container {
                 flex-direction: column;
+            }
+
+            .skills-container {
+                grid-template-columns: repeat(3, 1fr);
             }
 
             .about-img {
@@ -680,6 +720,10 @@
             .section-title {
                 font-size: 2rem;
             }
+
+            .skills-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
 
         @media (max-width: 576px) {
@@ -701,11 +745,29 @@
 
             .skills-container {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
             }
 
-            .about-img {
-                width: 200px;
-                height: 200px;
+            .skill-card {
+                padding: 1rem;
+            }
+
+            .skill-card i {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                gap: 1rem;
+            }
+            
+            .nav-links a {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -723,6 +785,7 @@
             <li><a href="#skills">Skills</a></li>
             <li><a href="#skill-level">Skill Level</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#project-idea">Got a Project?</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
@@ -731,7 +794,7 @@
     <section class="hero" id="home">
         <div class="hero-content fade-in">
             <h1>Hi, I'm <span>Erion Sfarqa</span></h1>
-            <p><i class="fas fa-laptop-code"></i> Web Developer & Creative Designer from Kosovo</p>
+            <p><i class="fas fa-laptop-code"></i> Full Stack Web Developer from Kosovo</p>
             <div class="contact-info">
                 <p><i class="fas fa-envelope"></i> sfarqaerion5@gmail.com</p>
                 <p><i class="fas fa-map-marker-alt"></i> Vushtrri, Kosovo</p>
@@ -754,8 +817,8 @@
             </div>
             <div class="about-text fade-in">
                 <h3>Who am I?</h3>
-                <p>I'm Erion Sfarqa, a passionate web developer based in Vushtrri, Kosovo. With a strong background in front-end development and design, I create beautiful, functional, and user-friendly websites.</p>
-                <p>My journey in web development started 1,5 years ago, and since then I've worked on various projects that helped me grow my skills and understanding of modern web technologies.</p>
+                <p>I'm Erion Sfarqa, a passionate Full Stack Web Developer based in Vushtrri, Kosovo. With expertise in both front-end and back-end technologies, I create comprehensive, scalable, and user-friendly web applications.</p>
+                <p>My journey in web development started 3 years ago, and since then I've worked on various projects that helped me grow my skills and understanding of modern web technologies across the entire stack.</p>
                 <p>When I'm not coding, you can find me exploring new design trends, learning new technologies, or enjoying outdoor activities in beautiful Kosovo.</p>
             </div>
         </div>
@@ -764,36 +827,68 @@
     <!-- Skills Section -->
     <section class="section skills" id="skills">
         <h2 class="section-title">My Skills</h2>
-        <div class="skills-container">
-            <div class="skill-card fade-in">
-                <i class="fab fa-html5"></i>
-                <h3>HTML</h3>
-                <div class="tooltip">I have a solid understanding of HTML and its semantic elements, enabling me to create well-structured and accessible web pages.</div>
-            </div>
-            <div class="skill-card fade-in">
-                <i class="fab fa-css3-alt"></i>
-                <h3>CSS</h3>
-                <div class="tooltip">I have a strong understanding of CSS and its properties, allowing me to create visually appealing and responsive designs.</div>
-            </div>
-            <div class="skill-card fade-in">
-                <i class="fab fa-js"></i>
-                <h3>JavaScript</h3>
-                <div class="tooltip">I have a good understanding of JavaScript and its core concepts, enabling me to create interactive and dynamic web applications.</div>
-            </div>
-            <div class="skill-card fade-in">
-                <i class="fab fa-react"></i>
-                <h3>ReactJS</h3>
-                <div class="tooltip">I have experience with React and its ecosystem, allowing me to build single-page applications efficiently.</div>
-            </div>
-            <div class="skill-card fade-in">
-                <i class="fab fa-github"></i>
-                <h3>GitHub</h3>
-                <div class="tooltip">I have experience with GitHub and its features, enabling me to host projects and collaborate with other developers.</div>
-            </div>
-            <div class="skill-card fade-in">
-                <i class="fas fa-code"></i>
-                <h3>VS Code</h3>
-                <div class="tooltip">I have experience with Visual Studio Code, enabling me to write code efficiently and use various extensions for development.</div>
+        <div class="container">
+            <div class="skills-container">
+                <div class="skill-card fade-in">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                    <div class="tooltip">Expert in semantic HTML5, creating accessible and SEO-friendly web structures with modern standards.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                    <div class="tooltip">Proficient in advanced CSS3 features including Flexbox, Grid, animations, and responsive design principles.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                    <div class="tooltip">Strong knowledge of modern JavaScript (ES6+), including async/await, promises, and functional programming.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-react"></i>
+                    <h3>React.js</h3>
+                    <div class="tooltip">Experienced in building dynamic single-page applications with React, hooks, and state management.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-vuejs"></i>
+                    <h3>Vue.js</h3>
+                    <div class="tooltip">Knowledge of Vue.js framework for building interactive and component-based user interfaces.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-node-js"></i>
+                    <h3>Node.js</h3>
+                    <div class="tooltip">Backend development with Node.js, Express, and building RESTful APIs for full-stack applications.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-code"></i>
+                    <h3>TypeScript</h3>
+                    <div class="tooltip">Experience with TypeScript for type-safe JavaScript development in both frontend and backend.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-paint-brush"></i>
+                    <h3>Tailwind CSS</h3>
+                    <div class="tooltip">Proficient in utility-first CSS framework for rapid UI development and responsive designs.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fab fa-bootstrap"></i>
+                    <h3>Bootstrap</h3>
+                    <div class="tooltip">Experienced with Bootstrap framework for building responsive and mobile-first websites.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-mobile-alt"></i>
+                    <h3>Responsive Design</h3>
+                    <div class="tooltip">Expert in creating responsive web designs that work seamlessly across all devices and screen sizes.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-project-diagram"></i>
+                    <h3>REST APIs</h3>
+                    <div class="tooltip">Experience in designing, building, and consuming RESTful APIs for full-stack applications.</div>
+                </div>
+                <div class="skill-card fade-in">
+                    <i class="fas fa-users-cog"></i>
+                    <h3>UI/UX Optimization</h3>
+                    <div class="tooltip">Focus on creating intuitive user interfaces with optimized user experience and performance.</div>
+                </div>
             </div>
         </div>
     </section>
@@ -804,47 +899,74 @@
         <div class="skill-level-container">
             <div class="skill-item fade-in">
                 <div class="skill-info">
-                    <span class="skill-name">HTML</span>
-                    <span class="skill-percent">100%</span>
+                    <span class="skill-name">HTML5</span>
+                    <span class="skill-percent">95%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 100%"></div>
+                    <div class="skill-progress" style="width: 95%"></div>
                 </div>
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-info">
-                    <span class="skill-name">CSS</span>
-                    <span class="skill-percent">94%</span>
+                    <span class="skill-name">CSS3</span>
+                    <span class="skill-percent">90%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 94%"></div>
+                    <div class="skill-progress" style="width: 90%"></div>
                 </div>
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-info">
-                    <span class="skill-name">JavaScript</span>
-                    <span class="skill-percent">50%</span>
+                    <span class="skill-name">JavaScript (ES6+)</span>
+                    <span class="skill-percent">85%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 50%"></div>
+                    <div class="skill-progress" style="width: 85%"></div>
                 </div>
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-info">
-                    <span class="skill-name">React</span>
-                    <span class="skill-percent">40%</span>
+                    <span class="skill-name">React.js</span>
+                    <span class="skill-percent">80%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 40%"></div>
+                    <div class="skill-progress" style="width: 80%"></div>
+                </div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-info">
+                    <span class="skill-name">Node.js</span>
+                    <span class="skill-percent">75%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 75%"></div>
+                </div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-info">
+                    <span class="skill-name">TypeScript</span>
+                    <span class="skill-percent">70%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 70%"></div>
                 </div>
             </div>
             <div class="skill-item fade-in">
                 <div class="skill-info">
                     <span class="skill-name">Git/GitHub</span>
-                    <span class="skill-percent">70%</span>
+                    <span class="skill-percent">88%</span>
                 </div>
                 <div class="skill-bar">
-                    <div class="skill-progress" style="width: 70%"></div>
+                    <div class="skill-progress" style="width: 88%"></div>
+                </div>
+            </div>
+            <div class="skill-item fade-in">
+                <div class="skill-info">
+                    <span class="skill-name">REST APIs</span>
+                    <span class="skill-percent">82%</span>
+                </div>
+                <div class="skill-bar">
+                    <div class="skill-progress" style="width: 82%"></div>
                 </div>
             </div>
         </div>
@@ -856,11 +978,11 @@
         <div class="projects-container">
             <div class="project-card fade-in">
                 <div class="project-img">
-                    <img src="Screenshot 2025-06-06 160132.png" alt="Project 1">
+                    <img src="Screenshot 2025-06-06 160132.png" alt="E-commerce Website">
                 </div>
                 <div class="project-info">
-                    <h3>Airlines Website</h3>
-                    <p>A fully responsive airline platform with a fresh design, dynamic flight listings, and easy navigation for a smooth user experience.</p>
+                    <h3>Airline Booking Platform</h3>
+                    <p>A responsive flight booking system with real-time seat selection, secure payment processing, and dynamic pricing. Features user authentication and admin dashboard for flight management.</p>
                     <div class="project-links">
                         <a href="https://erionsfarqa.github.io/SkyWings/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <a href="https://github.com/ErionSfarqa/SkyWings"><i class="fab fa-github"></i> Source Code</a>
@@ -869,45 +991,60 @@
             </div>
             <div class="project-card fade-in">
                 <div class="project-img">
-                    <img src="Screenshot 2025-06-09 144653.png" alt="Project 2">
+                    <img src="konvo.png" alt="Task Management App">
                 </div>
                 <div class="project-info">
-                    <h3>Fitness Website</h3>
-                    <p>A fully responsive fitness website with a bold design, dynamic workout sections, and smooth navigation for an engaging user experience.</p>
-                    <div class="project-links">
-                        <a href="https://erionsfarqa.github.io/Fitness/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
-                        <a href="https://github.com/ErionSfarqa/Fitness"><i class="fab fa-github"></i> Source Code</a>
-                    </div>
-                </div>
-            </div>
-                 <div class="project-card fade-in">
-                <div class="project-img">
-                    <img src="konvo.png" alt="Project 2">
-                </div>
-                <div class="project-info">
-                    <h3>Konvo Website</h3>
-                    <p>A fully responsive call center platform with a clean design, interactive service sections, and smooth navigation for a professional user experience.</p>
+                    <h3>Call Center Dashboard</h3>
+                    <p>Call Center Dashboard
+Interactive CRM solution with live call analytics, customer history tracking, and agent performance metrics. Includes ticket management and real-time communication tools.</p>
                     <div class="project-links">
                         <a href="https://erionsfarqa.github.io/Konvo/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <a href="https://github.com/ErionSfarqa/Konvo"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
             </div>
-                 <div class="project-card fade-in">
+            <div class="project-card fade-in">
                 <div class="project-img">
-                    <img src="kosweathef.png" alt="Project 2">
+                    <img src="https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1705&q=80" alt="Weather Dashboard">
                 </div>
                 <div class="project-info">
-                    <h3>Weather Website</h3>
-                    <p>A fully responsive weather website with a clean design, live forecasts, and simple navigation for quick and accurate weather updates.</p>
+                    <h3>Weather Dashboard</h3>
+                    <p>Real-time weather dashboard with day forecasts, interactive maps, and location-based alerts. Features historical data comparison and severe weather notifications.</p>
                     <div class="project-links">
                         <a href="https://erionsfarqa.github.io/Weather-Dashboard/"><i class="fas fa-external-link-alt"></i> Live Demo</a>
                         <a href="https://github.com/ErionSfarqa/Weather-Dashboard"><i class="fab fa-github"></i> Source Code</a>
                     </div>
                 </div>
             </div>
+        </div>
     </section>
 
+    <!-- Project Idea Section -->
+    <section class="section project-idea" id="project-idea">
+        <h2 class="section-title">Got a Project in Mind?</h2>
+        <div class="project-idea-container">
+            <div class="project-form fade-in">
+                <form id="projectForm">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Your Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="project-details">Project Details</label>
+                        <textarea id="project-details" name="project-details" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Project Idea</button>
+                </form>
+            </div>
+            <div class="project-image fade-in">
+                <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Team collaboration">
+            </div>
+        </div>
+    </section>
 
     <!-- Contact Section -->
     <section class="section contact" id="contact">
@@ -934,11 +1071,10 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="social-links">
-            <a href="https://www.linkedin.com/in/erion-sfarqa-3290a0345/"><i class="fab fa-linkedin-in"></i></a>
-            <a href="https://github.com/ErionSfarqa"><i class="fab fa-github"></i></a>
-            <a href="https://www.instagram.com/erionsfarqaa/"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
         </div>
-        <p class="copyright">© 2025 Erion Sfarqa. All Rights Reserved.</p>
+        <p class="copyright">© 2023 Erion Sfarqa. All Rights Reserved.</p>
     </footer>
 
     <!-- Back to Top Button -->
