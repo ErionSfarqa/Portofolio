@@ -1,2 +1,11 @@
-Modern Full-Stack Developer Portfolio
-A responsive personal portfolio showcasing web development skills with dark purple aesthetic. Features interactive skill displays, project showcases, and contact form with smooth animations and professional design.
+# Project Title
+
+This is a brief description of my project. It demonstrates my skills in web development and showcases my ability to create responsive, modern websites with clean code and attractive design.
+
+## Project Screenshots
+
+![Desktop View](./screenshots/desktop-view.pn)
+*Desktop version of the website*
+
+![Mobile View](./screenshots/mobile-view.png)
+*Mobile responsive version of the website*
