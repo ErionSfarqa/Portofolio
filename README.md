@@ -4,8 +4,8 @@ This is a brief description of my project. It demonstrates my skills in web deve
 
 ## Project Screenshots
 
-![Desktop View](./screenshots/desktop-view.pn)
-*Desktop version of the website*
-
-![Mobile View](./screenshots/mobile-view.png)
-*Mobile responsive version of the website*
+<div align="center">
+  <img src="./screenshots/desktop-view.png" alt="Desktop View" width="45%">
+  <img src="./screenshots/mobile-view.png" alt="Mobile View" width="45%">
+  <p>Desktop and mobile views of the website</p>
+</div>
