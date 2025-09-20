@@ -1,11 +1,11 @@
-# Project Title
+# Modern Full-Stack Developer Portfolio
 
-This is a brief description of my project. It demonstrates my skills in web development and showcases my ability to create responsive, modern websites with clean code and attractive design.
+A responsive personal portfolio showcasing web development skills with dark purple aesthetic. Features interactive skill displays, project showcases, and contact form with smooth animations and professional design.
 
 ## Project Screenshots
 
 <div align="center">
   <img src="Screenshot 2025-09-20 021258.png" alt="Desktop View" width="45%">
-  <img src="./screenshots/mobile-view.png" alt="Mobile View" width="45%">
-  <p>Desktop and mobile views of the website</p>
+  <img src="Screenshot 2025-09-20 021317.png" alt="Mobile View" width="45%">
+  <p>Desktop views of the website</p>
 </div>
